@@ -1,7 +1,11 @@
 class PagesConfig {
-	static HOME = "/";
+	HOME = "/";
+	ADD_COURSE = "/course";
+	ADD_MODULE = "/module";
 
-	static COURSE(id: number) {
+	COURSE = "/:courseId";
+
+	toCourse(id: string) {
 		return `/${id}`;
 	}
 }

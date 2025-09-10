@@ -2,16 +2,18 @@ export type TID = {
 	id: number;
 };
 
-export interface ICourse {
-	id: string;
+interface IBase {
 	title: string;
 	description: string;
+}
+
+export interface ICourse extends IBase {
+	id: string;
 	imageUrl: string;
 	category: string;
 }
 
-// "id": "1",
-// "title": "Введение в инопланетные технологии",
-// "description": "Основные принципы работы с технологиями внеземных цивилизаций и обзор их научного вклада.",
-// "imageUrl": "https://picsum.photos/300/200",
-// "category": "Обзорные курсы"
+export interface IModule extends IBase {
+	id: number;
+	courseId: number;
+}

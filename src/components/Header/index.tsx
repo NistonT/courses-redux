@@ -5,6 +5,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router";
+import { pagesConfig } from "../../config/pages.config";
 import { useSearchValue } from "../../hooks/useSearchValue";
 
 export const Header = () => {
@@ -22,11 +24,18 @@ export const Header = () => {
 							flexGrow: 1,
 							display: { xs: "none", sm: "block" },
 							fontWeight: 500,
+							textDecoration: "none",
 						}}
 					>
-						COURSE
+						<Link
+							to={pagesConfig.HOME}
+							style={{ textDecoration: "none", color: "white" }}
+						>
+							COURSE
+						</Link>
 					</Typography>
-
+					<Link to={pagesConfig.ADD_COURSE}>Создать курс</Link>
+					<Link to={pagesConfig.ADD_MODULE}>Создать модуль</Link>
 					<TextField
 						placeholder='Поиск...'
 						value={searchValue}

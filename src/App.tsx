@@ -1,4 +1,6 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router";
+import { pagesConfig } from "./config/pages.config";
 import { RootState } from "./store/store";
 import { ICourse } from "./types/types";
 
@@ -10,7 +12,9 @@ function App() {
 			{courses ? (
 				<div>
 					{courses.map((elem: ICourse) => (
-						<div key={elem.id}>{elem.title}</div>
+						<div key={elem.id}>
+							<Link to={pagesConfig.toCourse(elem.id)}>{elem.title}</Link>
+						</div>
 					))}
 				</div>
 			) : (
